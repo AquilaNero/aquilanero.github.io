@@ -1,0 +1,273 @@
+:root {
+  color-scheme: dark;
+  --canvas: #09090b;
+  --surface: #18181b;
+  --surface-raised: #27272a;
+  --text: #fafafa;
+  --muted: #a1a1aa;
+  --border: #3f3f46;
+  --accent: #8b7cff;
+  --accent-strong: #705cff;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    'SF Pro Display',
+    'Segoe UI',
+    sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 85% -10%, #352d74 0, transparent 32rem),
+    var(--canvas);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.shell {
+  width: min(100% - 2.5rem, 68rem);
+  margin: 0 auto;
+  padding: clamp(3rem, 9vw, 7rem) 0;
+}
+
+.hero {
+  max-width: 55rem;
+}
+
+.eyebrow,
+.brand {
+  margin: 0 0 1.25rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+}
+
+h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.6rem, 9vw, 6.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.lede {
+  max-width: 46rem;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(3rem, 9vw, 7rem);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+  min-height: 8rem;
+  padding: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.card:hover {
+  background: var(--surface-raised);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card-index {
+  color: var(--accent);
+  font:
+    700 0.8rem/1 ui-monospace,
+    'SFMono-Regular',
+    Menlo,
+    monospace;
+}
+
+.card strong,
+.card small {
+  display: block;
+}
+
+.card strong {
+  font-size: 1.25rem;
+}
+
+.card small {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.document {
+  padding-top: 1.5rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.topbar .brand {
+  margin: 0;
+}
+
+.topbar > a:last-child {
+  color: var(--muted);
+}
+
+.document article {
+  max-width: 48rem;
+}
+
+.document h1 {
+  max-width: 22ch;
+  font-size: clamp(2.5rem, 7vw, 5.2rem);
+}
+
+.document-header {
+  margin-bottom: 4rem;
+}
+
+.document section {
+  margin: 3rem 0;
+}
+
+.document h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.document p,
+.document li {
+  color: #d4d4d8;
+}
+
+.document ul,
+.document ol {
+  padding-left: 1.4rem;
+}
+
+.summary {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-strong);
+  border-radius: 0.9rem;
+}
+
+.summary p {
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.15rem;
+  color: white;
+  font-weight: 750;
+  text-decoration: none;
+  background: var(--accent-strong);
+  border-radius: 999px;
+}
+
+footer {
+  width: min(100% - 2.5rem, 68rem);
+  margin: 0 auto;
+  padding: 0 0 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 36rem) {
+  .card {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .card-index {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.languages a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.625rem;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.languages [aria-current='page'] {
+  border-color: var(--accent);
+  background: var(--surface-raised);
+  text-decoration: none;
+}
+
+.document a[href^='mailto:'] {
+  overflow-wrap: anywhere;
+}
